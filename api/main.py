@@ -7,8 +7,8 @@ app.config["DEBUG"] = True
 app.config['JSON_AS_ASCII'] = False
 
 api = Api(app)
-api.add_resource(Entry,"/")
-api.add_resource(Rent,"/rent")
+api.add_resource(RentAll,"/rent")
+api.add_resource(RentTarget,"/rent/<option>")
 
 @app.errorhandler(Exception)
 def handle_error(error):
