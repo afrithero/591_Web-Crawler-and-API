@@ -52,7 +52,7 @@ class Rent(Resource):
         response = {}
         cursor_to_list = list(results)
 
-        if len(cursur_to_list) != 0:
+        if len(cursor_to_list) != 0:
             response['code'] = 200
             response['msg'] ='Success'
             response['data'] = cursor_to_list
