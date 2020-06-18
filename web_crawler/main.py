@@ -167,7 +167,7 @@ if __name__ == '__main__':
         print(t.name + '啟動！')
         thread_list.append(t)
 
-    # 幫多執行緒加上阻斷
+    # 封鎖子執行緒
     for thread in thread_list:
         thread.join()
     

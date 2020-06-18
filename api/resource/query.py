@@ -49,4 +49,16 @@ class Rent(Resource):
         elif arg['option'] == "4":
             results = monCol.find({"$and":[{"縣市":"台北市"},{"出租者身份":{"$in":["屋主"]}},{"出租者":{"$regex":"小姐"}},{"出租者":{"$regex":"^吳"}}]},{"_id":0})
 
-        return jsonify(list(results))
+        response = {}
+        cursor_to_list = list(results)
+
+        if len(cursur_to_list) != 0:
+            response['code'] = 200
+            response['msg'] ='Success'
+            response['data'] = cursor_to_list
+        
+        else:
+            response['code'] = 204
+            response['msg'] ='No Data'
+
+        return jsonify(response)
