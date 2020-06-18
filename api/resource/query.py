@@ -79,7 +79,7 @@ class RentTarget(Resource):
         elif option == '2':
             if arg['phone'] == None:
                 response["code"] = 400
-                response["msg"] = "請輸入欲查詢之電話號碼！"
+                response["msg"] = "Parameter 'phone' is required!"
                 return jsonify(response)
             phone = arg['phone']
             results = monCol.find({"聯絡電話":phone},{"_id":0})
