@@ -65,7 +65,7 @@ def chrome_driver():
     driver = webdriver.Chrome(driver_path,options=chrome_options)
     return driver
 
-def monInsert(username,password,monip,mondb,moncol,data):
+def monInsert(data):
     # 將資料插入 MongoDB
     curpath = os.path.dirname(os.path.abspath('__file__')) 
     cfgpath = os.path.join(curpath,'conf.ini')
@@ -173,6 +173,6 @@ if __name__ == '__main__':
     
     print('總資料筆數',len(all_records))
 
-    monInsert(username,password,monip,mondb,moncol,all_records)
+    monInsert(all_records)
 
     print('入庫成功')
